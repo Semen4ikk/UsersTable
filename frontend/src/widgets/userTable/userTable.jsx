@@ -1,9 +1,10 @@
 import React, {useEffect, useState, useRef} from 'react';
-import UserModal from "./user.modal.jsx";
-import './user.table.css';
-import {useUsers} from "../entities/user/hooks/useUsers.jsx";
-import {paginationItems} from "../features/pagination.jsx";
-import {filterItems} from "../features/filter.jsx";
+import UserModal from "../userModal/userModal.jsx";
+import style from './userTable.module.css';
+import {useUsers} from "../../entities/user/hooks/useUsers.jsx";
+import {paginationItems} from "../../features/pagination.jsx";
+import {filterItems} from "../../features/filter.jsx";
+import {Pagination} from "../../shared/pagination/pagination.jsx";
 
 export default function UsersTable() {
 
@@ -43,9 +44,7 @@ export default function UsersTable() {
     };
 
     const handlePageChange = newPage => {
-        if (newPage >= 1 && newPage <= totalPages) {
-            setCurrentPage(newPage);
-        }
+        setCurrentPage(newPage);
     };
 
     useEffect(() => {
@@ -103,7 +102,7 @@ export default function UsersTable() {
 
     const renderHeaderCell = (label, key) => (
         <th
-            className="resizable-header"
+            className={style.resizableHeader}
             style={{ width: columnWidths[key] }}
             onClick={() => requestSort(key)}
             key={key}
@@ -111,7 +110,7 @@ export default function UsersTable() {
             {label} {sortConfig.key === key ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
             {key !== 'city' && (
                 <div
-                    className="resizer"
+                    className={style.resizer}
                     onMouseDown={e => handleMouseDown(e, key)}
                 />
             )}
@@ -119,7 +118,7 @@ export default function UsersTable() {
     );
 
     return (
-        <div className="users-table-container">
+        <div className={style.usersTableContainer}>
             <h2>Список пользователей</h2>
 
             <input
@@ -129,10 +128,10 @@ export default function UsersTable() {
                 placeholder="Фильтр по ФИ, полу, телефону, email, городу или стране"
                 value={filterQuery}
                 onChange={e => setFilterQuery(e.target.value)}
-                className="filter-input"
+                className={style.filterInput}
             />
 
-            <div className="table-wrapper">
+            <div className={style.tableWrapper}>
                 <table ref={tableRef}>
                     <thead>
                     <tr>
@@ -155,7 +154,7 @@ export default function UsersTable() {
                                 setSelectedUser(user);
                                 setShowModal(true);
                             }}
-                            className="user-row"
+                            className={style.userRow}
                         >
                             <td>{user.lastName}</td>
                             <td>{user.firstName}</td>
@@ -174,16 +173,10 @@ export default function UsersTable() {
             </div>
 
             {filteredAndSortedUsers.length === 0 && <p>Ничего не найдено</p>}
-
-            <div className="pagination">
-                <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-                    Предыдущая
-                </button>
-                <span>Страница {currentPage} из {totalPages}</span>
-                <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-                    Следующая
-                </button>
-            </div>
+            <Pagination
+                onPageChange={handlePageChange}
+                currentPage={currentPage}
+                totalPages={totalPages} />
 
             {showModal && (
                 <UserModal

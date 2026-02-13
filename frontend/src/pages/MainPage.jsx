@@ -1,4 +1,4 @@
-import UsersTable from "../widgets/UserTable.jsx";
+import UsersTable from "../widgets/userTable/userTable.jsx";
 
 export function MainPage() {
     return (
