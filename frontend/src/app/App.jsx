@@ -1,16 +1,8 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import {MainPage} from "../pages/MainPage.jsx";
+import AppRoutes from "./routes.jsx";
 
 function App() {
 
-    return (
-        <Router>
-            <Routes>
-                <Route path="/main" element={<MainPage />} />
-                <Route path="/" element={<MainPage />} />
-            </Routes>
-        </Router>
-    );
+    return <AppRoutes/>
 }
 
 export default App
