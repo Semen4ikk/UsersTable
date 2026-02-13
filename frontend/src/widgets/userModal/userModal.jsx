@@ -1,5 +1,5 @@
 import React from 'react';
-import './user.modal.css';
+import style from './userModal.module.css';
 
 export default function UserModal({ user, onClose }) {
     if (!user) return null;
@@ -12,52 +12,52 @@ export default function UserModal({ user, onClose }) {
     };
 
     return (
-        <div className="modal-overlay" onClick={handleOverlayClick}>
-            <div className="modal-content">
+        <div className={style.modalContainer} onClick={handleOverlayClick}>
+            <div className={style.modalContent}>
                 <img
                     src={user.image}
                     alt="Avatar"
-                    className="modal-avatar"
+                    className={style.modalAvatar}
                 />
-                <h3 className="modal-name">{`${user.firstName} ${user.lastName}`}</h3>
+                <h3 className={style.modalName}>{`${user.firstName} ${user.lastName}`}</h3>
 
-                <div className="modal-info-block">
-                    <div className="modal-info-item">
+                <div className={style.modalInfoBlock}>
+                    <div className={style.modalInfoItem}>
                         <p><strong>Возраст:</strong> {user.age}</p>
                     </div>
-                    <div className="modal-divider"></div>
+                    <div className={style.modalDivider}></div>
 
-                    <div className="modal-info-item">
+                    <div className={style.modalInfoItem}>
                         <p><strong>Пол:</strong> {user.gender}</p>
                     </div>
-                    <div className="modal-divider"></div>
+                    <div className={style.modalDivider}></div>
 
-                    <div className="modal-info-item">
+                    <div className={style.modalInfoItem}>
                         <p><strong>Рост:</strong> {user.height} см</p>
                     </div>
-                    <div className="modal-divider"></div>
+                    <div className={style.modalDivider}></div>
 
-                    <div className="modal-info-item">
+                    <div className={style.modalInfoItem}>
                         <p><strong>Вес:</strong> {user.weight} кг</p>
                     </div>
-                    <div className="modal-divider"></div>
+                    <div className={style.modalDivider}></div>
 
-                    <div className="modal-info-item">
+                    <div className={style.modalInfoItem}>
                         <p><strong>Телефон:</strong> {user.phone}</p>
                     </div>
-                    <div className="modal-divider"></div>
+                    <div className={style.modalDivider}></div>
 
-                    <div className="modal-info-item">
+                    <div className={style.modalInfoItem}>
                         <p><strong>Email:</strong> {user.email}</p>
                     </div>
-                    <div className="modal-divider"></div>
+                    <div className={style.modalDivider}></div>
 
-                    <div className="modal-info-item">
+                    <div className={style.modalInfoItem}>
                         <p><strong>Адрес:</strong> {`${user.address?.address}, ${user.address?.city}`}</p>
                     </div>
                 </div>
 
-                <button onClick={onClose} className="modal-close-btn">
+                <button onClick={onClose} className={style.modalCloseBtn}>
                     Закрыть
                 </button>
             </div>
