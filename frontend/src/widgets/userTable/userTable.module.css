@@ -1,0 +1,71 @@
+
+
+.usersTableContainer {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: system-ui, sans-serif;
+}
+
+.filterInput {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    background-color: #2a2540;
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.filterInput::placeholder {
+    color: #a1a1aa;
+}
+
+.tableWrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.userRow:hover {
+    background-color: var(--hover-row);
+    cursor: pointer;
+}
+
+th.resizableHeader {
+    position: relative;
+    background-color: var(--bg-header);
+    font-weight: 600;
+    user-select: none;
+}
+.resizer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    user-select: none;
+    z-index: 10;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+.resizer:hover {
+    background-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .tableWrapper {
+        overflow-x: auto;}
+
+    .filterInput {
+        font-size: 12px;
+        padding: 0.4rem;
+    }
+}
