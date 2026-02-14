@@ -10,9 +10,9 @@ export default function AppRoutes() {
     return (
             <Router>
                 <Routes>
+                    <Route path="/" element={<MainPage />} />
                     <Route path="/main" element={<MainPage />} />
-                    {/*<Route path="/" element={<MainPage />} />*/}
-                    <Route path="/public" element={<NotFoundPage />} />
+
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </Router>
