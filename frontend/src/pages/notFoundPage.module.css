@@ -1,11 +1,11 @@
-.not-found {
+.notFound {
     background: #1e1b2f;
     overflow: hidden;display: flex;
     justify-content: center;
     align-items: center;
 
 }
-h1{
+.errorMassage{
     display: flex;
     justify-content: center;
     align-items: center;

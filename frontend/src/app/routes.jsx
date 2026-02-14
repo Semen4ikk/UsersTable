@@ -11,7 +11,7 @@ export default function AppRoutes() {
             <Router>
                 <Routes>
                     <Route path="/main" element={<MainPage />} />
-                    <Route path="/" element={<MainPage />} />
+                    {/*<Route path="/" element={<MainPage />} />*/}
                     <Route path="/public" element={<NotFoundPage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>

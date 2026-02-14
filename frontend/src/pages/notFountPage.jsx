@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/notFoundPage.css';
+import style from './notFoundPage.module.css';
 
 export default function NotFoundPage() {
     function random(x, y) {
@@ -11,7 +11,7 @@ export default function NotFoundPage() {
         stars.push(
             <div
                 key={i}
-                className="star"
+                className={style.star}
                 style={{
                     top: `${random(0, 100)}%`,
                     left: `${random(0, 100)}%`,
@@ -21,9 +21,9 @@ export default function NotFoundPage() {
     }
 
     return (
-        <div className="not-found-page">
+        <div className={style.notFound}>
             {stars}
-            <h1>Пусто как в космосе</h1>
+            <h1 className={style.errorMassage}>404 Такой страницы нет(</h1>
         </div>
     );
 }
