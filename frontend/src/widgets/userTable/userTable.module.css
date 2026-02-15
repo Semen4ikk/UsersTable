@@ -15,7 +15,7 @@
     margin-bottom: 1rem;
     padding: 0.5rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     box-sizing: border-box;
     background-color: #2a2540;
     color: var(--text-light);
@@ -65,6 +65,8 @@ th.resizableHeader {
         overflow-x: auto;}
 
     .filterInput {
+        width: 100%;
+        max-width: 330px;
         font-size: 12px;
         padding: 0.4rem;
     }
