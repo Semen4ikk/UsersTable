@@ -1,7 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import {MainPage} from "../pages/MainPage.jsx";
-import {HashRouter as Router} from "react-router-dom";
+import {HashRouter as Router, Routes, Route } from "react-router-dom";
 import NotFoundPage from "../pages/notFountPage.jsx";
 
 
