@@ -1,6 +1,6 @@
 # UserTable
 
-https://semen4ikk.github.io/UserTable/
+https://semen4ikk.github.io/UsersTable/
 
 
 ## Таблица содержит поля:
